@@ -2,14 +2,17 @@ class ArtistsController < ApplicationController
 
   def index
     @artists = Artist.all
+    # @photos = @artists.photos
+
   end
 
   def show
     @artist = Artist.find(params[:id])
+  #  @photos = @artist.photos
   end
 
 
-
+#--- sorting filters ---
   def by_name
     @artists = Artist.by_name
     render action: :index
