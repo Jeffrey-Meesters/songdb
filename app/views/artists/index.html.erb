@@ -1,0 +1,14 @@
+<div class="filteritem">
+     <%= link_to "Sort by name", by_name_artists_path %>
+   </div>
+   <div class="filteritem">
+        <%= link_to "Sort by time", by_created_at_artists_path %>
+      </div>
+
+<ul>
+<% @artists.each do |artist| %>
+<li>
+<%= link_to artist.name, artist_path(artist.id) %>
+</li>
+<%end%>
+</ul>
