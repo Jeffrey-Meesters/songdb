@@ -1,5 +1,6 @@
 class Artist < ApplicationRecord
   has_many :songs
+  has_many :photos
 
   scope :by_name,     -> {order(:name)}
   scope :created_at,   -> { order(:created_at) }
