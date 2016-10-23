@@ -1,0 +1,11 @@
+<ul>
+<%= form_for(@song) do |f| %>
+  <li>
+    <div>
+    <%= f.text_field :title, placeholder: "title" %>
+      <%= f.text_field :album, placeholder: true %>
+      <%= f.text_field :year, placeholder: true %>
+    </div>
+  </li>
+<% end %>
+</ul>

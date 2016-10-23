@@ -2,13 +2,12 @@ class ArtistsController < ApplicationController
 
   def index
     @artists = Artist.all
-    # @photos = @artists.photos
-
   end
 
   def show
     @artist = Artist.find(params[:id])
-  #  @photos = @artist.photos
+    @song = Song.new
+    @songs = @artist.songs.find(params[:id])
   end
 
 

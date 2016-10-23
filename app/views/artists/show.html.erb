@@ -1,3 +1,11 @@
-<%= @artist.name %>
+<h1><%= @artist.name %></h1>
+
+<center id="notice"><%= notice %></center>
+
+  <%= render "form" %>
+
+  <ul>
+    <%= render @songs %>
+  </ul>
 
 <%= link_to "Go to all artists", root_path %>

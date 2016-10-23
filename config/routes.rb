@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'artists#index'
 
   resources :photos
+
+  resources :songs
   resources :artists do
     collection do
       get :by_name
