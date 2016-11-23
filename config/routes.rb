@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   resources :photos
 
-resources :artists do
-    resources :songs do
+  resources :artists, only: [:index] do
+    resources :songs, only: [:index, :create] do
       collection do
       get :by_name
       get :by_created_at

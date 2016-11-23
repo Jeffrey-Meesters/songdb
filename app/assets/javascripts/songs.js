@@ -1,16 +1,16 @@
-function createSong(title, album, year, artistId) {
-  $.ajax({
-    type: "POST",
-    url: "/artists/" + artistId + "/songs.json"
-    data: JSON.stringify({
-      song: { title: title, album: album, year: year}
-    }),
+function createSong(title, artistId) {
+    $.ajax({
+      type: "POST",
+      url: "/artists/" + artistId + "/songs.json",
+      data: JSON.stringify({
+        song: { title: title }
+      }),
 
     contentType: "application/json",
     dataType: "json" })
 
     .success(function(data) {
-      var listItem = $('<li></li>').html(data.song.name);
+      var listItem = $('<li></li>').html(data.song.title);
       $("#songs").append(listItem);
       $("#song-name").val(null);
       $("#notice").html(data.message);
@@ -26,11 +26,12 @@ function createSong(title, album, year, artistId) {
     });
 }
 
-function submitSing(event) {
+function submitSong(event) {
   event.preventDefault();
+  console.log('bla')
 
   var title = $("#song-name").val();
-  var artistId = $("#song-name").date("artist-id");
+  var artistId = $("#song-name").data("artist-id");
 
   createSong(title, artistId);
 }
