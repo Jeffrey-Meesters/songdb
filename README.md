@@ -1,24 +1,14 @@
-# README
+#SongDB
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Codaisseur week 3
 
-Things you may want to cover:
+**Homework assignment**
+During this week we learned, amongst other things, to use Jbuilder and AJAX in RoR.
+This app is the homework assignment to show that you understand how it works.
 
-* Ruby version
+I used AJAX to submit new songs
+I used Jbuilder to delete songs
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**What doesn't work?**
+New songs get rendered, but without delete button.
+After refresh the delete button is shown.
