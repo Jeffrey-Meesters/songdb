@@ -1,4 +1,4 @@
-<%= form_for [artist, song] do |f| %>
+<%= form_for [@artist, song] do |f| %>
   <%= f.text_field :title, placeholder: "Song name", id: "song-name", data: { artist_id: artist.id } %>
   <ul id="errors"></ul>
 <% end %>

@@ -1,17 +1,17 @@
 function createSong(title, artistId) {
-    $.ajax({
-      type: "POST",
-      url: "/artists/" + artistId + "/songs.json",
-      data: JSON.stringify({
-        song: { title: title }
-      }),
+  $.ajax({
+    type: "POST",
+    url: "/artists/" + artistId + "/songs.json",
+    data: JSON.stringify({
+      song: { title: title }
+    }),
 
     contentType: "application/json",
-    dataType: "json" })
+    dataType: "json"})
 
     .success(function(data) {
       var listItem = $('<li></li>').html(data.song.title);
-      $("#songs").append(listItem);
+      $("#songs").append( listItem );
       $("#song-name").val(null);
       $("#notice").html(data.message);
     })
@@ -19,7 +19,7 @@ function createSong(title, artistId) {
     .fail(function(error) {
       errors = JSON.parse(error.responseText).error
 
-      $.each(errors, function(index, value){
+      $.each(errors, function(index, value) {
         var listItem = $('<li></li>').html(value);
         $("#errors").append(listItem);
       });
@@ -28,7 +28,6 @@ function createSong(title, artistId) {
 
 function submitSong(event) {
   event.preventDefault();
-  console.log('bla')
 
   var title = $("#song-name").val();
   var artistId = $("#song-name").data("artist-id");
@@ -36,6 +35,6 @@ function submitSong(event) {
   createSong(title, artistId);
 }
 
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
   $("form").bind('submit', submitSong);
 });

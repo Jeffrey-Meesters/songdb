@@ -1,9 +1,10 @@
 <h1><%= @artist.name %></h1>
 
 <ul id="songs">
-  <% @songs.each do |song| %>
-    <li><%= song.title %></li>
-  <% end %>
+  <%= render @songs, artist: @artist %>
 </ul>
 
 <%= render "form", song: @song, artist: @artist %>
+<br>
+<br>
+<hr>

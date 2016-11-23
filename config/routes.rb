@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :photos
 
   resources :artists, only: [:index] do
-    resources :songs, only: [:index, :create] do
+    resources :songs, only: [:index, :create, :destroy] do
       collection do
       get :by_name
       get :by_created_at
